@@ -1,3 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
-
+html, body {
+	font-family: 'Open Sans Condensed', sans-serif;
+	background: #0b4c49;
+	color: #fff;
+}
 /*# sourceMappingURL=styles.bundle.map*/
