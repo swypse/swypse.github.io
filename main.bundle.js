@@ -260,7 +260,7 @@ var AppComponent = (function () {
     AppComponent.prototype.ngOnInit = function () {
         this.getWord();
         this.app = {
-            title: "Игра «Крокодил»: помощь в подборе слова.",
+            title: "Слово для «Крокодила»",
         };
     };
     AppComponent.prototype.getNewWord = function () {
@@ -574,7 +574,7 @@ var WordRatingComponent = (function () {
         this.text = this.getText();
     };
     WordRatingComponent.prototype.getText = function () {
-        return this.texts[this.word.level];
+        return 'Сложность: ' + this.texts[this.word.level];
     };
     __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Input */])(), 
@@ -710,7 +710,7 @@ var environment = {
 /***/ 868:
 /***/ function(module, exports) {
 
-module.exports = ".app-content {\r\n\tpadding: 30px;\r\n}\r\n\r\n.loading .fa {\r\n\t-webkit-animation: rotate .2s infinite linear alternate;\r\n\t        animation: rotate .2s infinite linear alternate;\r\n}\r\n\r\n.app-toolbar-menu {\r\n\tpadding: 0 14px 0 14px;\r\n\tcolor: white;\r\n}\r\n\r\n.app-icon-button {\r\n\tbox-shadow: none;\r\n\t-webkit-user-select: none;\r\n\t   -moz-user-select: none;\r\n\t    -ms-user-select: none;\r\n\t        user-select: none;\r\n\tbackground: none;\r\n\tborder: none;\r\n\tcursor: pointer;\r\n\t-webkit-filter: none;\r\n\t        filter: none;\r\n\tfont-weight: normal;\r\n\theight: auto;\r\n\tline-height: inherit;\r\n\tmargin: 0;\r\n\tmin-width: 0;\r\n\tpadding: 0;\r\n\ttext-align: left;\r\n\ttext-decoration: none;\r\n}"
+module.exports = ".app-content {\r\n\tpadding: 30px;\r\n}\r\n\r\n.loading .fa {\r\n\t-webkit-animation: rotate .2s infinite linear alternate;\r\n\t        animation: rotate .2s infinite linear alternate;\r\n}\r\n\r\n.app-toolbar-menu {\r\n\tpadding: 0 14px 0 14px;\r\n\tcolor: white;\r\n}\r\n\r\n.app-icon-button {\r\n\tbox-shadow: none;\r\n\t-webkit-user-select: none;\r\n\t   -moz-user-select: none;\r\n\t    -ms-user-select: none;\r\n\t        user-select: none;\r\n\tbackground: none;\r\n\tborder: none;\r\n\tcursor: pointer;\r\n\t-webkit-filter: none;\r\n\t        filter: none;\r\n\tfont-weight: normal;\r\n\theight: auto;\r\n\tline-height: inherit;\r\n\tmargin: 0;\r\n\tmin-width: 0;\r\n\tpadding: 0;\r\n\ttext-align: left;\r\n\ttext-decoration: none;\r\n}\r\n\r\n.get-new-word {\r\n\ttext-align: center;\r\n\theight: 100px;\r\n}\r\n\r\n.get-new-word md-progress-spinner {\r\n\twidth: 32px;\r\n\tmargin: -23px auto 0 auto;\r\n}"
 
 /***/ },
 
@@ -752,7 +752,7 @@ module.exports = ""
 /***/ 874:
 /***/ function(module, exports) {
 
-module.exports = "<md-sidenav-layout>\n\t<md-toolbar color=\"primary\">\n\t\t<button md-icon-button [mdMenuTriggerFor]=\"menu\">\n\t\t\t<md-icon>more_vert</md-icon>\n\t\t</button>\n\n\t\t<md-menu #menu=\"mdMenu\">\n\t\t\t<button md-menu-item (click)=\"getNewWord()\">\n\t\t\t\tНовое слово\n\t\t\t</button>\n\t\t\t<button md-menu-item> Settings </button>\n\t\t\t<button md-menu-item> Help </button>\n\t\t\t<button md-menu-item disabled> Sign Out </button>\n\t\t</md-menu>\n\n\t\t{{app.title}}\n\t</md-toolbar>\n\n\t<div class=\"app-content\">\n\t\t<div class=\"flex-container\" fxLayout=\"column\" fxLayout.gt-md=\"row\" fxLayoutAlign=\"space-around stretch\" fxLayoutGap=\"0px\"\n\t\t\tfxLayoutGap.gt-md=\"50px\">\n\t\t\t<div class=\"flex-item\" fxFlex=\"100%\" fxFlex.gt-md=\"80%\">\n\t\t\t\t<app-croco-svg [word]=\"word.content\" [loading]=\"loading\"></app-croco-svg>\n\t\t\t\t<app-word-rating [word]=\"word\"></app-word-rating>\n\t\t\t\t<div style=\"text-align: center\">\n<button md-fab [disabled]=\"loading\" color=\"primary\" [class.bounceIn]=\"loading\" (click)=\"getNewWord()\" md-ripple>\n\t\t\t\t\t<md-progress-spinner mode=\"indeterminate\" color=\"accent\" *ngIf=\"loading\" style=\"width: 32px;margin: -23px auto 0 auto;\"></md-progress-spinner>\n<md-icon *ngIf=\"!loading\">cached</md-icon>\n</button>\n</div>\n</div>\n<div class=\"flex-item\" fxFlex=\"100%\" fxFlex.gt-md=\"20%\">\n\t<md-card>\n\t\t<app-recently-used-words></app-recently-used-words>\n\t</md-card>\n</div>\n</div>\n</div>\n\n</md-sidenav-layout>"
+module.exports = "<md-sidenav-layout>\n\t<md-toolbar color=\"primary\">\n\t\t<button md-icon-button [mdMenuTriggerFor]=\"menu\">\n\t\t\t<md-icon>more_vert</md-icon>\n\t\t</button>\n\n\t\t<md-menu #menu=\"mdMenu\">\n\t\t\t<button md-menu-item (click)=\"getNewWord()\">\n\t\t\t\tНовое слово\n\t\t\t</button>\n\t\t\t<button md-menu-item> Settings </button>\n\t\t\t<button md-menu-item> Help </button>\n\t\t\t<button md-menu-item disabled> Sign Out </button>\n\t\t</md-menu>\n\n\t\t{{app.title}}\n\t</md-toolbar>\n\n\t<div class=\"app-content\">\n\t\t<div class=\"flex-container\" fxLayout=\"column\" fxLayout.gt-md=\"row\" fxLayoutAlign=\"space-around stretch\" fxLayoutGap=\"0px\"\n\t\t\tfxLayoutGap.gt-md=\"50px\">\n\t\t\t<div class=\"flex-item\" fxFlex=\"100%\" fxFlex.gt-md=\"80%\">\n\t\t\t\t<app-croco-svg [word]=\"word.content\" [loading]=\"loading\"></app-croco-svg>\n\t\t\t\t<app-word-rating [word]=\"word\"></app-word-rating>\n\t\t\t\t<div class=\"get-new-word\">\n\t\t\t\t\t<button md-fab [disabled]=\"loading\" color=\"primary\" [class.bounceIn]=\"loading\" (click)=\"getNewWord()\" md-ripple>\n\t\t\t\t\t<md-progress-spinner mode=\"indeterminate\" color=\"accent\" *ngIf=\"loading\"></md-progress-spinner>\n<md-icon *ngIf=\"!loading\">cached</md-icon>\n</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"flex-item\" fxFlex=\"100%\" fxFlex.gt-md=\"20%\">\n\t\t\t\t<md-card>\n\t\t\t\t\t<app-recently-used-words></app-recently-used-words>\n\t\t\t\t</md-card>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n</md-sidenav-layout>"
 
 /***/ },
 
